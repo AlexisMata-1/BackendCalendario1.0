@@ -53,6 +53,7 @@ namespace BackendCalendario1._0.Controllers
             {
                 return BadRequest("El usuario no existe");
             }
+            
             else
             {
                 try
@@ -123,7 +124,7 @@ namespace BackendCalendario1._0.Controllers
                     users.pass = Encrypt.GetSHA256(users.pass); //Hash del password
                     _context.Users.Add(users); // Agregado de la info al contexto
                     await _context.SaveChangesAsync(); //Guardado del contexto en base de datos
-                    return CreatedAtAction("GetUsers", new { Id_user = users.id_user }, users);
+                    return Ok();
                 }
 
             }

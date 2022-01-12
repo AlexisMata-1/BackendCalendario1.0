@@ -81,11 +81,12 @@ namespace BackendCalendario1._0.Controllers
                                   where userCredentials.email == user.email && user.is_active == true
                                   select user).ToListAsync();
             userCredentials.pass = Encrypt.GetSHA256(userCredentials.pass);
-            if (userCredentials.pass == response[0].pass)
+            //validacion de email y contraseña sean iguales en base de datos a la informacion proporcionada por el usuario
+            if (userCredentials.pass == response[0].pass && userCredentials.email==response[0].email)
             {
                 return Ok(response[0]);
             }
-            else
+            else 
             {
                 return BadRequest("Contraseña o usuario incorrecto");
             }
