@@ -159,7 +159,7 @@ namespace BackendCalendario1._0.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest();
+                return BadRequest(e);
             }
         }
 

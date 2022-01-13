@@ -69,7 +69,7 @@ namespace BackendCalendario1._0.Controllers
                 }
             }
 
-            return NoContent();
+            return Ok("Datos cambiados exitosamente");
         }
 
         // POST: api/RegisterDays

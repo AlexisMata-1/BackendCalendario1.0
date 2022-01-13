@@ -17,4 +17,6 @@ using BackendCalendario1._0.Models;
         public DbSet<BackendCalendario1._0.Models.RegisterDay> RegisterDay { get; set; }
 
         public DbSet<BackendCalendario1._0.Models.Login> Login { get; set; }
+
+        public DbSet<BackendCalendario1._0.Models.Reports> Reports { get; set; }
     }
